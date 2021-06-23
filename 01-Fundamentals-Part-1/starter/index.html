@@ -26,82 +26,89 @@
   </style>
 
   <script type='text/javascript'>
-    //Q1 
-    let MarkHei, MarkWei, JohnHei, JohnWei;
-
-    function bmi(hei, wei) {
-      return wei / hei ** 2;
-    }
-
-    function calbmi(MarkHei, MarkWei, JohnHei, JohnWei) {
-      let MarkBMI = bmi(MarkHei, MarkWei);
-      let JohnBMI = bmi(JohnHei, JohnWei);
-      let markHigherBMI = MarkBMI > JohnBMI;
-      console.log("Mark's BMI :", MarkBMI, "John's BMI :", JohnBMI, " Mark > John :", markHigherBMI);
-    };
-
-    // 1-Q2
-    function calbmi(MarkHei, MarkWei, JohnHei, JohnWei) {
-      let MarkBMI = bmi(MarkHei, MarkWei);
-      let JohnBMI = bmi(JohnHei, JohnWei);
-
-      if (MarkBMI > JohnBMI) {
-        console.log("Mark's BMI(" + MarkBMI + ")is higher than John's BMI(" + JohnBMI + ")");
+    /*
+      //Q1 
+      let MarkHei, MarkWei, JohnHei, JohnWei;
+  
+      function bmi(hei, wei) {
+        return wei / hei ** 2;
       }
-      else if (MarkBMI < JohnBMI) {
-        console.log("Mark's BMI(" + MarkBMI + ")is lower than John's BMI(" + JohnBMI + ")");
-      }
-    };
-
-    calbmi(1.69, 78, 1.95, 95);
-
-    calbmi(1.88, 95, 1.76, 85);
-
-    //Q3
-    let DolphinsTeamScore = [97, 112, 101, 130, 78, 10, 124];
-    let KoalasTeamScore = [109, 95, 106, 145, 100, 41, 100];
-    function checkWinner(dol, koa) {
-      let avgDol = 0;
-      let avgKoa = 0;
-      for (i = 0; i < dol.length; i++) {
-        avgDol += dol[i];
-      }
-      avgDol = avgDol / dol.length;
-
-      for (i = 0; i < koa.length; i++) {
-        avgKoa += koa[i];
-      }
-      avgKoa = avgKoa / koa.length;
-
-      console.log("Dolphins Team Score :" + avgDol + ", Koalas Team Score :" + avgKoa)
-
-      if (avgDol > avgKoa && avgDol >= 100) {
-        console.log("Winner is Dolphins Team !")
-      }
-      else if (avgDol < avgKoa && avgKoa >= 100) {
-        console.log("Winner is Koalas Team !")
-      }
-      else if (avgDol === avgKoa && avgDol >= 100) {
-        console.log("Draw !")
-      }
-      else {
-        console.log("No Winner !")
-      }
-
-    };
-
-    checkWinner(DolphinsTeamScore, KoalasTeamScore);
-
-    //Q4 
-    function price(bill) {
+  
+      function calbmi(MarkHei, MarkWei, JohnHei, JohnWei) {
+        let MarkBMI = bmi(MarkHei, MarkWei);
+        let JohnBMI = bmi(JohnHei, JohnWei);
+        let markHigherBMI = MarkBMI > JohnBMI;
+        console.log("Mark's BMI :", MarkBMI, "John's BMI :", JohnBMI, " Mark > John :", markHigherBMI);
+      };
+  
+      // 1-Q2
+      function calbmi(MarkHei, MarkWei, JohnHei, JohnWei) {
+        let MarkBMI = bmi(MarkHei, MarkWei);
+        let JohnBMI = bmi(JohnHei, JohnWei);
+  
+        if (MarkBMI > JohnBMI) {
+          console.log("Mark's BMI(" + MarkBMI + ")is higher than John's BMI(" + JohnBMI + ")");
+        }
+        else if (MarkBMI < JohnBMI) {
+          console.log("Mark's BMI(" + MarkBMI + ")is lower than John's BMI(" + JohnBMI + ")");
+        }
+      };
+  
+      calbmi(1.69, 78, 1.95, 95);
+  
+      calbmi(1.88, 95, 1.76, 85);
+  
+      //Q3
+      let DolphinsTeamScore = [97, 112, 101, 130, 78, 10, 124];
+      let KoalasTeamScore = [109, 95, 106, 145, 100, 41, 100];
+      function checkWinner(dol, koa) {
+        let avgDol = 0;
+        let avgKoa = 0;
+        for (i = 0; i < dol.length; i++) {
+          avgDol += dol[i];
+        }
+        avgDol = avgDol / dol.length;
+  
+        for (i = 0; i < koa.length; i++) {
+          avgKoa += koa[i];
+        }
+        avgKoa = avgKoa / koa.length;
+  
+        console.log("Dolphins Team Score :" + avgDol + ", Koalas Team Score :" + avgKoa)
+  
+        if (avgDol > avgKoa && avgDol >= 100) {
+          console.log("Winner is Dolphins Team !")
+        }
+        else if (avgDol < avgKoa && avgKoa >= 100) {
+          console.log("Winner is Koalas Team !")
+        }
+        else if (avgDol === avgKoa && avgDol >= 100) {
+          console.log("Draw !")
+        }
+        else {
+          console.log("No Winner !")
+        }
+  
+      };
+  
+      checkWinner(DolphinsTeamScore, KoalasTeamScore);
+  
+      //Q4 
       let tip;
-      if (50 <= bill && bill <= 300) {   //這邊不能使用 50 <= bill <= 300
-        tip = bill * 0.15;
-      }
-      else {
-        tip = bill * 0.2;
-      }
-      console.log("Your bill price :" + bill + " , tip price :" + tip + " , final value :" + (bill + tip));
+      function price(bill) {
+        if (50 <= bill && bill <= 300) {   //這邊不能使用 50 <= bill <= 300
+          tip = bill * 0.15;
+        }
+        else {
+          tip = bill * 0.2;
+        }
+        console.log("Your bill price :" + bill + " , tip price :" + tip + " , final value :" + (bill + tip));
+      };
+      */
+
+    function price(bill) {
+      let tip = 50 <= bill && bill <= 300 ? bill * 0.15 : bill * 0.2;  // ? 為 Conditional(Ternary) Operator = Expression
+      console.log(`Your bill price is ${bill} , tip price is ${tip} , final value is ${bill + tip}`);
     };
 
     price(275);
