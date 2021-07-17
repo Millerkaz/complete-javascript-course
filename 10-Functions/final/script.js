@@ -248,7 +248,6 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-
 /*
 const poll = {
   question: 'What is your favourite programming language?',
@@ -407,4 +406,3 @@ GOOD LUCK 😀
   });
 })();
 */
-

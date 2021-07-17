@@ -4,6 +4,37 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+/*
+let newFlights = flights.split('+');
+for (let i of newFlights) {
+  let trim = i.replace(/_/g, ' ').trim().split(';');
+  trim[1] = trim[1].slice(0, 3).toUpperCase();
+  trim[2] = trim[2].slice(0, 3).toUpperCase();
+  trim[3] = `(${trim[3].replace(':', 'h')})`;
+  let trimFinal = `${trim[0].includes('Delayed') ? '🔴' : ''} ${trim[0]} from ${
+    trim[1]
+  } to ${trim[2]} ${trim[3]}`;
+
+  trimFinal = trimFinal.padStart(45, ' ');
+  console.log(trimFinal);
+}
+*/
+
+// ? better
+for (let i of flights.split('+')) {
+  // * 給定 ARRAY 每項的變數，方便抓取值
+  let [type, from, to, time] = i.replace(/_/g, ' ').trim().split(';');
+  from = from.slice(0, 3).toUpperCase();
+  to = to.slice(0, 3).toUpperCase();
+  time = `(${time.replace(':', 'h')})`;
+  let trimFinal = `${
+    type.includes('Delayed') ? '🔴' : ''
+  } ${type} from ${from} to ${to} ${time}`;
+
+  trimFinal = trimFinal.padStart(45, ' ');
+  console.log(trimFinal);
+}
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
