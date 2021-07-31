@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Bankist | When Banking meets Minimalist</title>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -38,6 +39,27 @@
             >
           </li>
         </ul>
+        <div id="nav--leave" class="display_none">
+          <button class="btu_nav--leave"></button>
+          <nav class="nav--leave hidden">
+            <ul class="nav__links nav__links--leave">
+              <li class="nav__item nav_item--leave">
+                <a class="nav__link" href="#section--1">Features</a>
+              </li>
+              <li class="nav__item nav_item--leave">
+                <a class="nav__link" href="#section--2">Operations</a>
+              </li>
+              <li class="nav__item nav_item--leave">
+                <a class="nav__link" href="#section--3">Testimonials</a>
+              </li>
+              <li class="nav__item nav_item--leave">
+                <a class="nav__link nav__link--btn btn--show-modal" href="#"
+                  >Open account</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </nav>
 
       <div class="header__title">
@@ -140,7 +162,10 @@
       <div class="operations">
         <div class="operations__tab-container">
           <button
-            class="btn operations__tab operations__tab--1 operations__tab--active"
+            class="
+              btn
+              operations__tab operations__tab--1 operations__tab--active
+            "
             data-tab="1"
           >
             <span>01</span>Instant Transfers
@@ -153,7 +178,11 @@
           </button>
         </div>
         <div
-          class="operations__content operations__content--1 operations__content--active"
+          class="
+            operations__content
+            operations__content--1
+            operations__content--active
+          "
         >
           <div class="operations__icon operations__icon--1">
             <svg>
@@ -332,7 +361,7 @@
       </p>
     </footer>
 
-    <div class="modal hidden">
+    <div style="transition: none" class="modal hidden">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
         Open your bank account <br />
@@ -349,7 +378,5 @@
       </form>
     </div>
     <div class="overlay hidden"></div>
-
-    <script src="script.js"></script>
   </body>
 </html>

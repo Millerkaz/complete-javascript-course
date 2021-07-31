@@ -251,3 +251,18 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+const now = new Date();
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  day: 'numeric'(),
+  month: 'long', //* (numeric , 2-digit)
+  year: 'numeric',
+  weekday: 'long',
+};
+
+//* navigator(導航) : WEB API ，顯示使用者狀態 & 身分
+const locale = navigator.language;
+
+let intlDate = new Intl.DateTimeFormat(locale, options).format(now);
